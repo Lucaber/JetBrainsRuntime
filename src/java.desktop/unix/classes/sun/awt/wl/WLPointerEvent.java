@@ -72,7 +72,9 @@ class WLPointerEvent {
         // see <linux/input-event-codes.h>
         LEFT(0x110, MouseEvent.BUTTON1, InputEvent.BUTTON1_DOWN_MASK),
         MIDDLE(0x112, MouseEvent.BUTTON2, InputEvent.BUTTON2_DOWN_MASK),
-        RIGHT(0x111, MouseEvent.BUTTON3, InputEvent.BUTTON3_DOWN_MASK);
+        RIGHT(0x111, MouseEvent.BUTTON3, InputEvent.BUTTON3_DOWN_MASK),
+        SIDE(0x113, 6, InputEvent.getMaskForButton(6)),
+        EXTRA(0x114, 7, InputEvent.getMaskForButton(7));
 
         public final int linuxCode; // The code from <linux/input-event-codes.h>
         public final int javaCode;  // The code from MouseEvents.BUTTONx
@@ -116,6 +118,8 @@ class WLPointerEvent {
                 case LEFT   -> "left";
                 case MIDDLE -> "middle";
                 case RIGHT  -> "right";
+                case SIDE  -> "side";
+                case EXTRA  -> "extra";
             };
         }
 
