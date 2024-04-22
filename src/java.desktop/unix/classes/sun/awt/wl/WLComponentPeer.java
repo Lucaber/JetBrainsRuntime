@@ -1064,7 +1064,7 @@ public class WLComponentPeer implements ComponentPeer {
                 final boolean isButtonReleased = !e.getIsButtonPressed();
                 final boolean wasSameButtonPressed = oldInputState.hasThisPointerButtonPressed(e.getButtonCode());
                 final boolean isButtonClicked = isButtonReleased && wasSameButtonPressed;
-                if (isButtonClicked) {
+                if (false && isButtonClicked) {
                     final MouseEvent mouseClickEvent = new MouseEvent(getTarget(),
                             MouseEvent.MOUSE_CLICKED,
                             timestamp,

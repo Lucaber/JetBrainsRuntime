@@ -26,6 +26,7 @@
 package sun.awt;
 
 import java.awt.AWTEvent;
+import java.awt.event.MouseEvent;
 import java.awt.AWTException;
 import java.awt.Button;
 import java.awt.Canvas;
@@ -2212,6 +2213,10 @@ class PostEventQueue {
      * Enqueue an AWTEvent to be posted to the Java EventQueue.
      */
     void postEvent(AWTEvent event) {
+        if (event instanceof MouseEvent) {
+        System.out.println("postEvent");
+        System.out.println(event);
+        }
         EventQueueItem item = new EventQueueItem(event);
 
         synchronized (this) {
